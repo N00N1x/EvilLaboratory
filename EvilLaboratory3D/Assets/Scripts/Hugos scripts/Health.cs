@@ -27,6 +27,18 @@ public class Health : MonoBehaviour
     {
         return currentHealth;
     }
+
+
+    public void TakeDamage(int Damage)
+    {
+        currentHealth -= Damage;
+        if (currentHealth < 0)
+            currentHealth = 0;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
