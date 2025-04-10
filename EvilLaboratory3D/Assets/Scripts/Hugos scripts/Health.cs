@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        SceneManager.LoadScene("NadiasWork");
+        //SceneManager.LoadScene("NadiasWork");
     }
 
     private void Heal(int amount)
