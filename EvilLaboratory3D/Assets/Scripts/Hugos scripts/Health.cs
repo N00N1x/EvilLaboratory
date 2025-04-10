@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        SceneManager.LoadScene("NadiasWork");
+        //SceneManager.LoadScene("NadiasWork");
     }
 
     private void Heal(int amount)
@@ -26,6 +26,18 @@ public class Health : MonoBehaviour
     public int GetCurrentHealth()
     {
         return currentHealth;
+    }
+
+
+    public void TakeDamage(int Damage)
+    {
+        currentHealth -= Damage;
+        if (currentHealth < 0)
+            currentHealth = 0;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
     // Update is called once per frame
     void Update()
