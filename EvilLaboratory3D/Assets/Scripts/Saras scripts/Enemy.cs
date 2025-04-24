@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-
+        
     }
 
     void Patrol()
