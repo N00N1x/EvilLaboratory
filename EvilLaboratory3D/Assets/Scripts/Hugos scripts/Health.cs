@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
         //SceneManager.LoadScene("NadiasWork");
     }
 
-    private void Heal(int amount)
+    public void Heal(int amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth)

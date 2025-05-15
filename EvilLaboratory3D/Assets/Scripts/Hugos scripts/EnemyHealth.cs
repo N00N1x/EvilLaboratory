@@ -11,9 +11,10 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("Enemy has died");
         Destroy(gameObject);
-        
+  
+
+
     }
 
     private void Heal(int amount)
