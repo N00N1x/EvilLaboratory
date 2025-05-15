@@ -1023,10 +1023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19404f1dde121094080ca2f626feca50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  ShootDamage: 1
+  MeleeDamage: 1
   FireRate: 0.5
+  MeleeRate: 1
   fpsCam: {fileID: 914182718}
-  range: 100
+  Shootrange: 100
+  Meleerange: 10
 --- !u!1 &1273946628
 GameObject:
   m_ObjectHideFlags: 0

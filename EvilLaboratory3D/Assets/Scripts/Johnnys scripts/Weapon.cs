@@ -2,28 +2,48 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int Damage = 1;
+    public int ShootDamage = 1;
+    public int MeleeDamage = 1/2;
     public float FireRate = 0.5f;
+    public float MeleeRate = 1f;
     public Camera fpsCam;
-    public float range = 100f;
+    public float Shootrange = 100f;
+    public float Meleerange = 10f;
 
-    void Update()
+
+    public void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Melee();
         }
     }
 
     void Shoot()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, Shootrange))
         {
             Debug.Log("Hit: " + hitInfo.transform.name);
             // Additional hit effects can be implemented here
         }
 
 
+
+    }
+
+    public void Melee()
+    {
+        RaycastHit hitInfo;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, Meleerange))
+        {
+            Debug.Log("Hit: " + hitInfo.transform.name);
+            // Additional hit effects can be implemented here
+        }
     }
 }
