@@ -21,7 +21,11 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
         {
             Debug.Log("Hit: " + hitInfo.transform.name);
-            // Additional hit effects can be implemented here
+            EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(Damage);
+            }
         }
 
 
