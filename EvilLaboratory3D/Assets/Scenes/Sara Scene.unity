@@ -2252,6 +2252,7 @@ RectTransform:
   m_Children:
   - {fileID: 265140414}
   - {fileID: 1028217727}
+  - {fileID: 1075000480}
   - {fileID: 1743751741}
   - {fileID: 1775616996}
   m_Father: {fileID: 0}
@@ -2949,17 +2950,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075000479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2380926, y: 0.55938, z: 1}
+  m_LocalScale: {x: 1.4696649, y: 1.7677442, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1706983693}
-  m_Father: {fileID: 1743751741}
+  m_Father: {fileID: 876985244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.609398, y: -42.4}
+  m_AnchoredPosition: {x: 307.2, y: -190}
   m_SizeDelta: {x: 113.0384, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1075000481
@@ -2975,7 +2976,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 546f987f1fd027f4a94952c4aceacd44, type: 3}
   m_Resource: {fileID: 8300000, guid: 546f987f1fd027f4a94952c4aceacd44, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3183,7 +3184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4064,7 +4065,6 @@ RectTransform:
   - {fileID: 357601576}
   - {fileID: 736601631}
   - {fileID: 344894237}
-  - {fileID: 1075000480}
   m_Father: {fileID: 876985244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
