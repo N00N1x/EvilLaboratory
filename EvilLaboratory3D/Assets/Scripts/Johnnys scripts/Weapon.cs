@@ -8,12 +8,17 @@ public class Weapon : MonoBehaviour
     public float Shootrange = 100f;
     public float Meleerange = 1.5f;
 
+    public ParticleSystem muzzleflash;
+    public AudioSource gunshot;
+
 
     public void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            muzzleflash.Play();
+            gunshot.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.V))
