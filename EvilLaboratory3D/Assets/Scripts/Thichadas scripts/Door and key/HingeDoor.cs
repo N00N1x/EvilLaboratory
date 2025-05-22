@@ -6,7 +6,7 @@ public class HingeDoor : MonoBehaviour
 
     void OnTriggerStay()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
             hingehere.Play(); 
     }
 }

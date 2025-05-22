@@ -7,11 +7,11 @@ public class Key : MonoBehaviour
 
     void OnTriggerStay()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Space))
 
         doorcolliderhere.GetComponent<Collider>().enabled = true;
 
-        if(Input.GetKeyUp(KeyCode.E))
+        if(Input.GetKeyUp(KeyCode.Space))
         KeyGone.SetActive(false);
     }
 }
