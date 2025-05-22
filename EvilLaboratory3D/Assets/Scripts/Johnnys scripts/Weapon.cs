@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public float MeleeRate = 1f;
     public Camera fpsCam;
     public float Shootrange = 100f;
-    public float Meleerange = 10f;
+    public float Meleerange = 1.5f;
 
 
     public void Update()
