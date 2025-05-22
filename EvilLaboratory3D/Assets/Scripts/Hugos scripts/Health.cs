@@ -5,6 +5,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 100;
     [SerializeField] public int currentHealth;
+    public GameObject gameOverUI;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -12,10 +14,13 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died");
-        //SceneManager.LoadScene("NadiasWork");
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+        }
     }
 
-    private void Heal(int amount)
+    public void Heal(int amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth)
@@ -40,9 +45,5 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
