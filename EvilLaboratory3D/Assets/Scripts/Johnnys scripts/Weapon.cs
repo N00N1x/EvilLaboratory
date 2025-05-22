@@ -4,11 +4,12 @@ public class Weapon : MonoBehaviour
 {
     public int ShootDamage = 1;
     public int MeleeDamage = 1/2;
-    public float FireRate = 0.5f;
-    public float MeleeRate = 1f;
     public Camera fpsCam;
     public float Shootrange = 100f;
-    public float Meleerange = 10f;
+    public float Meleerange = 1.5f;
+
+    public ParticleSystem muzzleflash;
+    public AudioSource gunshot;
 
 
     public void Update()
@@ -16,6 +17,8 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            muzzleflash.Play();
+            gunshot.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.V))
@@ -47,7 +50,11 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, Meleerange))
         {
             Debug.Log("Hit: " + hitInfo.transform.name);
-            // Additional hit effects can be implemented here
+            EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(ShootDamage);
+            }
         }
     }
 }
