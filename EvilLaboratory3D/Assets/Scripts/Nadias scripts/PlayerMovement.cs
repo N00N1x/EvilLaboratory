@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
+    // Platform tracking
+    private MovingPlatform currentPlatform;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,29 +39,59 @@ public class PlayerMovement : MonoBehaviour
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
         playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
         // Movement
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
-        rb.linearVelocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
+
+        Vector3 velocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
+        rb.linearVelocity = velocity;
 
         // Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
-            currentSpeed = sprintSpeed;
-        else
-            currentSpeed = moveSpeed;
+        currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
 
-        // Jump
+        // Ground Check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        // Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+        }
+    }
+
+    void LateUpdate()
+    {
+        // Apply platform delta movement
+        if (currentPlatform != null)
+        {
+            transform.position += currentPlatform.DeltaMovement;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (Vector3.Dot(contact.normal, Vector3.up) > 0.5f)
+                {
+                    currentPlatform = collision.gameObject.GetComponent<MovingPlatform>();
+                    break;
+                }
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            currentPlatform = null;
         }
     }
 }
