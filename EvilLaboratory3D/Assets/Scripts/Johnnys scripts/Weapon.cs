@@ -3,12 +3,10 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public int ShootDamage = 1;
-    public int MeleeDamage = 1;
-    public float FireRate = 0.5f;
-    public float MeleeRate = 1f;
+    public int MeleeDamage = 1/2;
     public Camera fpsCam;
     public float Shootrange = 100f;
-    public float Meleerange = 25f;
+    public float Meleerange = 1.5f;
 
 
     public void Update()
@@ -41,7 +39,7 @@ public class Weapon : MonoBehaviour
 
     }
 
-    void Melee()
+    public void Melee()
     {
         RaycastHit hitInfo;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, Meleerange))
@@ -50,11 +48,8 @@ public class Weapon : MonoBehaviour
             EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                enemy.TakeDamage(MeleeDamage);
+                enemy.TakeDamage(ShootDamage);
             }
         }
-
-
-
     }
 }
