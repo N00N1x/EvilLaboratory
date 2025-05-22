@@ -172,7 +172,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 918935914}
   m_Layer: 0
   m_Name: 'Doors '
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 1404032747}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1326,7 +1326,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086634505}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2086634509
 Transform:
   m_ObjectHideFlags: 0
@@ -1379,10 +1379,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2086634505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eece068d83b8d9749ab488b141811176, type: 3}
+  m_Script: {fileID: 11500000, guid: adfea6bd051944040be4265ac2be6bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  sprintSpeed: 8
+  mouseSensitivity: 100
+  playerCamera: {fileID: 0}
+  jumpForce: 5
+  isGrounded: 0
+  groundCheck: {fileID: 0}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1391,7 +1401,7 @@ SceneRoots:
   - {fileID: 918935914}
   - {fileID: 1599970085}
   - {fileID: 2086634509}
-  - {fileID: 1404032743}
   - {fileID: 466073318}
   - {fileID: 1198464807}
   - {fileID: 454698679}
+  - {fileID: 1404032743}
