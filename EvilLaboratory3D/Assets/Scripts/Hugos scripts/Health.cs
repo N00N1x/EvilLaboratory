@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;  
 
 public class Health : MonoBehaviour
 {
@@ -13,11 +13,7 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("Player has died");
-        if (gameOverUI != null)
-        {
-            gameOverUI.SetActive(true);
-        }
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Heal(int amount)

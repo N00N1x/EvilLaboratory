@@ -79,6 +79,6 @@ public class GameManager : MonoBehaviour
 
     public void start()
     {
-        SceneManager.LoadScene("Sara Scene");
+        SceneManager.LoadScene("Spel Scen");
     }
 }

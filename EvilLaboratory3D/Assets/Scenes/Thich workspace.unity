@@ -149,7 +149,7 @@ Animation:
   m_GameObject: {fileID: 454698674}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 883d93944cfb2004ab3f5f6b2dc78e94, type: 2}
+  m_Animation: {fileID: 7400000, guid: a6deecdf82aca004f8fa3de543b7e52d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 883d93944cfb2004ab3f5f6b2dc78e94, type: 2}
   m_WrapMode: 0
@@ -1368,7 +1368,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &2086634511
 MonoBehaviour:
@@ -1385,9 +1385,9 @@ MonoBehaviour:
   moveSpeed: 5
   sprintSpeed: 8
   mouseSensitivity: 100
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 996240146}
   jumpForce: 5
-  isGrounded: 0
+  isGrounded: 1
   groundCheck: {fileID: 0}
   groundDistance: 0.4
   groundMask:
